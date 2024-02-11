@@ -10,6 +10,44 @@ VLESS is a stateless lightweight transport protocol that consists of inbound and
 
 Потребуется GUI-приложение Nekobox / Nekoray, последние версии можно скачать с [github](https://github.com/Matsuridayo/nekoray/releases). В названиях архивов написано для какой операционной системы предназначено.
 
+**ВАЖНО: ПРИЛОЖЕНИЕ ЗАПУСКАТЬ ОТ ИМЕНИ АДМИНИСТРАТОРА**
+
+При первом запуске выберите ядро (core) под названием `sing-box`
+
+![](nekoray_first_exec.png)
+
+Для добавления профиля скопируйте qr-ссылку в буфер обмена и с помощью соотвествующего меню добавьте конфиг
+
+![](nekoray_add_profile.png)
+
+После этого переходите по вкладкам Preferences > Routing Settings, выбирайте подменю "Simple Route" и устанавливайте данные как на скриншоте:
+
+![](nekoray_routing.png)
+
+Direct IP:
+
+```
+geoip:ru
+geoip:private
+```
+
+Custom Route:
+
+```
+{
+    "rules": [
+        {
+            "domain_suffix": [
+                ".ru"
+            ],
+            "outbound": "direct"
+        }
+    ]
+}
+```
+
+Для запуска VPN нажмите правой кнопкой по профилю, после этого кнопку "Старт" / "Start"ю
+
 ### Android
 
 Для Android тоже есть NekoBox, доступный в [Google Play](https://play.google.com/store/apps/details?id=moe.nb4a) либо с [github](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases).
